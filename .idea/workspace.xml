@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="433b8c4e-4b6d-41e5-bad0-95552f521bf3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/sqlite-jdbc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/loganalyzer/db/DatabaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +50,11 @@
     "onboarding.tips.debug.path": "D:/java-projects/log-analyzer/src/Main.java"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\java-projects\log-analyzer\lib" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
