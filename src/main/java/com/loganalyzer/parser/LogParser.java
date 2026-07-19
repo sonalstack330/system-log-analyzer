@@ -72,7 +72,6 @@ public class LongParser {
                 // Try next format
             }
         }
-
         // Fallback if parsing fails
         return LocalDateTime.now();
     }
