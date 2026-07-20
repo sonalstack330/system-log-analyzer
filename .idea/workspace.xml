@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="433b8c4e-4b6d-41e5-bad0-95552f521bf3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/loganalyzer/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample-logs/app.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loganalyzer/analyzer/RootCauseAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loganalyzer/analyzer/RootCauseAnalyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loganalyzer/db/LogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loganalyzer/db/LogRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loganalyzer/model/LogEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loganalyzer/model/LogEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loganalyzer/parser/LogParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loganalyzer/parser/LogParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

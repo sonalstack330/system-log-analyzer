@@ -1,0 +1,42 @@
+2026-07-10 08:01:12.045 INFO com.app.Bootstrap - Application started successfully
+2026-07-10 08:02:33.112 INFO com.app.OrderService - Processing order #10234
+2026-07-10 08:05:44.881 ERROR com.app.OrderService - Failed to connect to database: connection timeout after 30000ms
+2026-07-10 08:05:44.882 ERROR com.app.OrderService - java.sql.SQLTimeoutException: connect timeout
+	at com.app.OrderService.connect(OrderService.java:88)
+	at com.app.OrderService.processOrder(OrderService.java:45)
+2026-07-10 09:12:01.334 WARN com.app.InventoryService - Low stock warning for SKU-4471
+2026-07-10 09:15:22.501 ERROR com.app.PaymentService - NullPointerException: cannot invoke getAmount() because payment is null
+	at com.app.PaymentService.charge(PaymentService.java:112)
+2026-07-10 10:20:11.220 ERROR com.app.OrderService - Failed to connect to database: connection timeout after 30000ms
+	at com.app.OrderService.connect(OrderService.java:88)
+2026-07-10 11:01:09.777 INFO com.app.UserService - User 8821 logged in
+2026-07-10 11:45:32.900 ERROR com.app.AuthService - Authentication failed for user 'jsmith': invalid credentials
+2026-07-10 12:30:18.400 ERROR com.app.PaymentService - NullPointerException: cannot invoke getAmount() because payment is null
+	at com.app.PaymentService.charge(PaymentService.java:112)
+2026-07-10 13:05:00.111 WARN com.app.CacheService - Cache eviction triggered, memory usage at 85%
+2026-07-10 14:22:41.900 ERROR com.app.ReportService - java.lang.OutOfMemoryError: Java heap space
+	at com.app.ReportService.generateBigReport(ReportService.java:200)
+2026-07-11 08:00:05.220 INFO com.app.Bootstrap - Application started successfully
+2026-07-11 08:15:12.400 ERROR com.app.OrderService - Failed to connect to database: connection timeout after 30000ms
+	at com.app.OrderService.connect(OrderService.java:88)
+2026-07-11 09:40:23.550 ERROR com.app.InventoryService - java.sql.SQLSyntaxErrorException: syntax error near 'SELCT'
+	at com.app.InventoryService.query(InventoryService.java:64)
+2026-07-11 10:05:00.230 ERROR com.app.PaymentService - NullPointerException: cannot invoke getAmount() because payment is null
+	at com.app.PaymentService.charge(PaymentService.java:112)
+2026-07-11 11:11:11.111 ERROR com.app.AuthService - Authentication failed for user 'admin': account locked
+2026-07-11 12:00:00.000 FATAL com.app.DatabaseService - Connection refused: could not connect to database host db-primary:5432
+2026-07-11 13:30:45.600 ERROR com.app.OrderService - Failed to connect to database: connection timeout after 30000ms
+	at com.app.OrderService.connect(OrderService.java:88)
+2026-07-11 14:44:12.888 WARN com.app.NotificationService - Retry attempt 2 for email delivery
+2026-07-12 08:00:01.010 INFO com.app.Bootstrap - Application started successfully
+2026-07-12 09:12:34.500 ERROR com.app.FileService - java.io.FileNotFoundException: /data/exports/report_2026.csv (No such file or directory)
+2026-07-12 10:33:21.700 ERROR com.app.OrderService - Failed to connect to database: connection timeout after 30000ms
+	at com.app.OrderService.connect(OrderService.java:88)
+2026-07-12 11:12:19.400 ERROR com.app.PaymentService - NullPointerException: cannot invoke getAmount() because payment is null
+	at com.app.PaymentService.charge(PaymentService.java:112)
+2026-07-12 12:05:55.000 ERROR com.app.InventoryDbWorker - deadlock detected while updating inventory row for SKU-4471
+2026-07-12 13:00:00.500 ERROR com.app.ApiGateway - upstream returned 503 internal server error for /api/v2/orders
+2026-07-12 14:15:00.900 ERROR com.app.PaymentService - NullPointerException: cannot invoke getAmount() because payment is null
+	at com.app.PaymentService.charge(PaymentService.java:112)
+2026-07-12 15:00:00.000 ERROR com.app.BackupWorker - java.io.IOException: No space left on device
+	at com.app.BackupWorker.writeBackup(BackupWorker.java:77)

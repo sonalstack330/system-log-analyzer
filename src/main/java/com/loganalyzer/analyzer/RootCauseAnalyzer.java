@@ -7,10 +7,10 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RootCauseAnalyzer
-{
+public class RootCauseAnalyzer {
     // Stores a root cause and its matching regex
-    private record Rule(String rootCause, Pattern pattern) { }
+    private record Rule(String rootCause, Pattern pattern) {
+    }
 
     // List of root cause detection rules
     private static final List<Rule> RULES = List.of(
@@ -43,43 +43,44 @@ public class RootCauseAnalyzer
     // Default root cause if no rule matches
     private static final String UNKNOWN = "UNCLASSIFIED";
 
-    // Default root cause if no rule matches
-    private static final String UNKNOWN = "UNCLASSIFIED";
+    // Analyze one log entry and tag it with a root cause
+    public void analyze(LogEntry entry) {
+        String message = entry.getMessage();
+        String rootCause = UNKNOWN;
 
-    //Check each rule
-    for(Rule rule : RULES)
-    {
-        Matcher m = rule.pattern().matcher(message);
+        //Check each rule
+        for (Rule rule : RULES) {
+            Matcher m = rule.pattern().matcher(message);
 
-        if(m.find())
-        {
-            rootCause = rule.rootCause();
-            break;
+            if (m.find()) {
+                rootCause = rule.rootCause();
+                break;
+            }
+        }
+        //Save analysis result
+        entry.setRootCause(rootCause);
+        entry.setSignature(buildSignature(entry, rootCause));
+    }
+
+    // Analyze all log entries
+    public void analyzeAll(List<LogEntry> entries) {
+        for (LogEntry entry : entries) {
+            analyze(entry);
         }
     }
 
-    //Save analysis result
-    entry.setRootCause(rootCause);
-    entry.setSignature(buildSignature(entry, rootCause));
-}
-// Analyze all log entries
-public void analyzeAll(List<LogEntry> entries) {
-    for (LogEntry entry : entries) {
-        analyze(entry);
-    }
-}
+    // Count entries by root cause
+    public Map<String, Long> summarizeByRootCause(List<LogEntry> entries) {
+        Map<String, Long> counts = new LinkedHashMap<>();
 
-// Count entries by root cause
-public Map<String, Long> summarizeByRootCause(List<LogEntry> entries) {
-    Map<String, Long> counts = new LinkedHashMap<>();
-
-    for (LogEntry entry : entries) {
-        counts.merge(entry.getRootCause(), 1L, Long::sum);
+        for (LogEntry entry : entries) {
+            counts.merge(entry.getRootCause(), 1L, Long::sum);
+        }
+        return counts;
     }
-    return counts;
-}
-// Builds a unique signature
-private String buildSignature(LogEntry entry, String rootCause) {
-    return entry.getLogger() + "::" + rootCause;
-}
+
+    // Builds a unique signature for grouping
+    private String buildSignature(LogEntry entry, String rootCause) {
+        return entry.getLogger() + "::" + rootCause;
+    }
 }
