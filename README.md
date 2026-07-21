@@ -73,3 +73,46 @@ log entries.
 
 *(Screenshot shows the tool being run from the command line against the
 sample log file, producing the full analysis report below.)*
+
+## ⚠️ Important: Re-running the tool accumulates data (no de-duplication)
+
+**Every run inserts new rows into the database — it does NOT check whether
+those exact log lines were already saved before.**
+
+This means running the tool twice against the *same* log file and the *same*
+database file will **double-count everything** (e.g. running it twice on a
+28-entry log file gives you 56 rows total, not 28).
+
+### Why it works this way
+
+This mirrors how real log-shipping tools behave: each run is expected to
+process *new* log data (e.g. today's log file, or logs since the last run),
+appending to history over time — that's what powers the "Error Trend by Day"
+feature. The tool intentionally does not try to detect "have I seen this
+exact line before," to keep the logic simple.
+
+### How to get a clean test run
+
+If you want to re-test against the same sample log from scratch, delete the
+database file first:
+
+```powershell
+Remove-Item logs.db
+java -cp "target\classes;lib\sqlite-jdbc.jar" com.loganalyzer.Main sample-logs\app.log logs.db
+```
+
+### How to add more data (the intended use case)
+
+To simulate accumulating history, run the tool again with a **different**
+log file but the **same** database file — this correctly adds to history
+without duplicating anything, since the new file's contents are genuinely new:
+
+```powershell
+java -cp "target\classes;lib\sqlite-jdbc.jar" com.loganalyzer.Main sample-logs\app-day2.log logs.db
+```
+### Possible future improvement (not implemented)
+
+A production version could de-duplicate by checking whether a row with the
+same `raw_line` + `timestamp` already exists before inserting — trading
+simplicity for robustness against accidental re-runs.
+
