@@ -60,4 +60,16 @@ java -cp "target\classes;lib\sqlite-jdbc.jar" com.loganalyzer.Main sample-logs\a
 ```
 If `db-file` is omitted, it defaults to `log_analysis.db`.
 
+## Verified Run
 
+This tool has been built and tested end-to-end: compiled cleanly with
+`javac`, executed against the included sample log (`sample-logs/app.log`),
+and confirmed to correctly parse, classify, store, and report on all 28
+log entries.
+
+![Sample run output 2](screenshot2.png)
+
+![Sample run output 1](screenshot1.png)
+
+*(Screenshot shows the tool being run from the command line against the
+sample log file, producing the full analysis report below.)*

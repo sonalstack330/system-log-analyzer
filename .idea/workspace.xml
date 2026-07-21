@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="433b8c4e-4b6d-41e5-bad0-95552f521bf3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshot1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshot2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,13 +48,14 @@
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/java-projects/log-analyzer/lib",
+    "last_opened_file_path": "D:/java-projects/log-analyzer",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "D:/java-projects/log-analyzer/src/Main.java"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\java-projects\log-analyzer" />
       <recent name="D:\java-projects\log-analyzer\lib" />
     </key>
   </component>
