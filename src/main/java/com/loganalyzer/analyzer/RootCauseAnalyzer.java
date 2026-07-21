@@ -11,7 +11,6 @@ public class RootCauseAnalyzer {
     // Stores a root cause and its matching regex
     private record Rule(String rootCause, Pattern pattern) {
     }
-
     // List of root cause detection rules
     private static final List<Rule> RULES = List.of(
             new Rule("DB_CONNECTION_TIMEOUT", Pattern.compile(
@@ -78,7 +77,6 @@ public class RootCauseAnalyzer {
         }
         return counts;
     }
-
     // Builds a unique signature for grouping
     private String buildSignature(LogEntry entry, String rootCause) {
         return entry.getLogger() + "::" + rootCause;
